@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&family=Sansita+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -13,28 +15,6 @@
   --font-heading: 'Sansita One';
   --font-body: 'Fira Sans';
 }
-
-@font-face {
-  font-family: 'Sansita One';
-  src: url('../assets/fonts/sansita-one.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  src: url('../assets/fonts/fira-sans-regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Fira Sans';
-  src: url('../assets/fonts/fira-sans-semibold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
 
 body {
   margin: 0;
