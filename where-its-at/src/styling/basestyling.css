@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-background: #231F42;
+  --primary-white: #ffffff;
+  --primary-black: #000000;
+  --primary-pink: #F56B9A;
+  --primary-green: #37AEAB;
+  --font-heading: 'Sansita One';
+  --font-body: 'Fira Sans';
+}
+
+@font-face {
+  font-family: 'Sansita One';
+  src: url('../assets/fonts/sansita-one.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../assets/fonts/fira-sans-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../assets/fonts/fira-sans-semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+body {
+  margin: 0;
+  background-color: var(--primary-background);
+  color: var(--primary-white);
+}
+
+h1{
+  font-family: var(--font-heading);
+  color: var(--primary-pink);
+  font-weight: 400 bolder;
+  font-size: 32px;
+  font-style: italic;
+  letter-spacing: 1px;
+  padding: 10px;
+
+}
+
+h2 {
+  font-family: var(--font-heading);
+  color: var(--primary-pink);
+}
+
+h3 {
+  font-family: "Fira sans";
+  color: var(--primary-white);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 1px;
+  font-size: 22px;
+}
+
+p {
+  font-family: Fira sans;
+}
