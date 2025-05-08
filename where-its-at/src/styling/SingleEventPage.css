@@ -1,0 +1,108 @@
+.single-event-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .single-event-wrapper h3 {
+    padding: 8px 0;
+  }
+  
+  .event-info-detail {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .event-datetime-detail {
+    font-weight: bold;
+    color: var(--primary-green);
+  }
+  
+  .single-event-title {
+    font-family: 'Sansita One', sans-serif;
+    font-size: 36px;
+    color: var(--primary-pink);
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .event-add-to-cart-btn {
+    margin-top: 2rem;
+    width: 100%;
+    color: var(--primary-white);
+    background-color: var(--primary-green);
+    font-weight: bold;
+    font-size: 22px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px rgba(0, 0, 0, 1);
+  }
+  
+
+  .quantity-box {
+    background-color: inherit;
+    border: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 150px;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  
+  .quantity-ticket-price {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    text-shadow: 1px 1px 0 rgba(245, 107, 154, 1);
+    width: 100%;
+    border: 1px solid var(--primary-pink);
+    border-bottom: 0;
+    box-sizing: border-box;
+  }
+  
+  .quantity-controls {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .quantity-btn {
+    background-color: inherit;
+    border: var(--primary-pink) solid 1px;
+    border-radius: 0;
+    color: var(--primary-white);
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .quantity-number {
+    display: flex;
+    align-items: center;
+    border: var(--primary-pink) solid;
+    font-family: "Fira sans";
+    border-left: hidden;
+    border-right: hidden;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--primary-white);
+    width: 100%;
+    height: 100%;
+  }
+  
