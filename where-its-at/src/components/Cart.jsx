@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 import "../styling/basestyling.css";
 
 const CartContext = createContext();
@@ -11,6 +12,7 @@ export function useCart() {
 
 function Cart({ children }) {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
 
   const addToCart = (event, quantity) => {
     setCartItems((prev) => {
@@ -30,7 +32,6 @@ function Cart({ children }) {
     setCartItems((prev) => prev.filter((item) => item.event.id !== id));
   };
 
-  // Legger til updateQuantity funksjonen
   const updateQuantity = (eventId, newQuantity) => {
     setCartItems((prev) =>
       prev.map((item) =>
@@ -39,10 +40,14 @@ function Cart({ children }) {
     );
   };
 
+  const navigateToOrderSummary = () => {
+    navigate("/order");
+  };
+
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
       {cartItems.length > 0 && (
-        <div className="cart-icon-container">
+        <div className="cart-icon-container" onClick={navigateToOrderSummary}>
           <FontAwesomeIcon icon={faCartShopping} size="xl" />
         </div>
       )}
