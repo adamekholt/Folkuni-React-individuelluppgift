@@ -1,6 +1,22 @@
+import React from 'react';
+import useStore from '../store/useStore';
+import TicketData from '../components/TicketData';
 import '../styling/ConfirmationPage.css';
-import '../styling/basestyling.css';
 
-export default function ConfirmationPage() {
-  return <div></div>;
-}
+const ConfirmationPage = () => {
+  const orderDetails = useStore((state) => state.orderDetails);
+
+  if (!orderDetails || !orderDetails.tickets || orderDetails.tickets.length === 0) {
+    return <p>Inga biljetter hittades.</p>;
+  }
+
+  return (
+    <div className="confirmation-wrapper">
+      {orderDetails.tickets.map((ticket, index) => (
+        <TicketData key={index} ticket={ticket} />
+      ))}
+    </div>
+  );
+};
+
+export default ConfirmationPage;
