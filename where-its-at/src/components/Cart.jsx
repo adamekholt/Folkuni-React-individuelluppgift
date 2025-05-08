@@ -1,4 +1,7 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import "../styling/basestyling.css";
 
 const CartContext = createContext();
 
@@ -10,10 +13,10 @@ function Cart({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (event, quantity) => {
-    setCartItems(prev => {
-      const existing = prev.find(item => item.event.id === event.id);
+    setCartItems((prev) => {
+      const existing = prev.find((item) => item.event.id === event.id);
       if (existing) {
-        return prev.map(item =>
+        return prev.map((item) =>
           item.event.id === event.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
@@ -24,11 +27,16 @@ function Cart({ children }) {
   };
 
   const removeFromCart = (id) => {
-    setCartItems(prev => prev.filter(item => item.event.id !== id));
+    setCartItems((prev) => prev.filter((item) => item.event.id !== id));
   };
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+      {cartItems.length > 0 && (
+        <div className="cart-icon-container">
+          <FontAwesomeIcon icon={faCartShopping} size="xl" />
+        </div>
+      )}
       {children}
     </CartContext.Provider>
   );

@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Cart from './components/Cart'; // Importere Cart-komponenten
 import LandingPage from './pages/LandingPage';
 import EventPage from './pages/EventPage';
 import SingleEventPage from './pages/SingleEventPage';
@@ -7,7 +8,7 @@ import ConfirmationPage from './pages/ConfirmationPage';
 
 function App() {
   return (
-    <Router>
+    <Cart>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/events" element={<EventPage />} />
@@ -15,7 +16,7 @@ function App() {
         <Route path="/order" element={<OrderSummaryPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
       </Routes>
-    </Router>
+    </Cart>
   );
 }
 
