@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styling/ConfirmationPage.css';
+import barcode from '../assets/barcode.png';
 
 const TicketData = ({ ticket }) => {
   return (
@@ -36,7 +37,7 @@ const TicketData = ({ ticket }) => {
       </div>
 
       <div className="ticket-barcode">
-        <div className="barcode"></div>
+      <img className="barcode" src={barcode} alt="Barcode" /> 
         <p>#{ticket.ticketId}</p>
       </div>
     </div>
