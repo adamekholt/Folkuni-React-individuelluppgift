@@ -29,10 +29,10 @@ function OrderSummaryPage() {
             {cartItems.map(({ event, quantity }) => (
               <li key={event.id} className="order-summary-item">
                 <OrderItem 
-                  event={event} 
-                  quantity={quantity} 
-                  onQuantityChange={newQuantity => updateQuantity(event.id, newQuantity)}
-                  onRemove={() => removeFromCart(event.id)}
+                  event={event}
+                  quantity={quantity} // ✅ send tall, ikke funksjon
+                  onQuantityChange={(newQuantity) => updateQuantity(event.id, newQuantity)} // ✅ riktig funksjon
+                  onRemove={() => removeFromCart(event.id)} // ✅ riktig fjerning
                 />
               </li>
             ))}

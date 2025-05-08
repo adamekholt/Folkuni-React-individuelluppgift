@@ -30,8 +30,17 @@ function Cart({ children }) {
     setCartItems((prev) => prev.filter((item) => item.event.id !== id));
   };
 
+  // Legger til updateQuantity funksjonen
+  const updateQuantity = (eventId, newQuantity) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.event.id === eventId ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
       {cartItems.length > 0 && (
         <div className="cart-icon-container">
           <FontAwesomeIcon icon={faCartShopping} size="xl" />
