@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import Cart from './components/Cart';
-import '../src/styling/basestyling.css';
+import { BrowserRouter } from 'react-router-dom';
+import './styling/basestyling.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Cart>
-      <App />
-    </Cart>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
