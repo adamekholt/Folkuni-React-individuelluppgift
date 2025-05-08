@@ -4,6 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function OrderItem({ event, quantity, onQuantityChange, onRemove }) {
+  // 🔍 Legg til disse for feilsøking:
+  console.log("OrderItem - quantity:", quantity);
+  console.log("OrderItem - onQuantityChange:", onQuantityChange);
+
   return (
     <div className="order-item-card">
       <div className="order-item-details">
@@ -23,7 +27,7 @@ function OrderItem({ event, quantity, onQuantityChange, onRemove }) {
       <div className="order-item-actions">
         <QuantityAddition
           quantity={quantity}
-          setQuantity={onQuantityChange} 
+          setQuantity={onQuantityChange} // Pass onQuantityChange here to update quantity
         />
       </div>
     </div>
