@@ -93,3 +93,8 @@
   font-weight: bold;
   color: var(--primary-green);
 }
+
+.event-link {
+  text-decoration: none;
+  color: inherit;
+}

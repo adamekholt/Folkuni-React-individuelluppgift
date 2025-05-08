@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // 👈 Importer Link
 import { fetchEvents } from '../api';
 import '../styling/EventPage.css';
 import '../styling/basestyling.css';
@@ -22,20 +23,22 @@ function EventList() {
   return (
     <div className="event-list">
       {events.map(event => (
-        <div className="event-card" key={event.id}>
-          <div className="event-date">
-            <p className="day">{event.when.date.split(' ')[0]}</p>
-            <p className="month">{event.when.date.split(' ')[1]}</p>
+        <Link to={`/event/${event.id}`} key={event.id} className="event-link">
+          <div className="event-card">
+            <div className="event-date">
+              <p className="day">{event.when.date.split(' ')[0]}</p>
+              <p className="month">{event.when.date.split(' ')[1]}</p>
+            </div>
+            <div className="event-info">
+              <h3 className='event-list-info'>{event.name}</h3>
+              <p className="venue">{event.where}</p>
+              <p className="time">{event.when.from} - {event.when.to}</p>
+            </div>
+            <div className="event-price">
+              <p>{event.price} sek</p>
+            </div>
           </div>
-          <div className="event-info">
-            <h3 className='event-list-info'>{event.name}</h3>
-            <p className="venue">{event.where}</p>
-            <p className="time">{event.when.from} - {event.when.to}</p>
-          </div>
-          <div className="event-price">
-            <p>{event.price} sek</p>
-          </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
