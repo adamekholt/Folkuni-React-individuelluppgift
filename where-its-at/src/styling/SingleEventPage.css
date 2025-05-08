@@ -59,7 +59,7 @@
     overflow: hidden;
   }
   
-  .quantity-ticket-price {
+  .quantity-ticket-info {
     flex: 1;
     display: flex;
     align-items: center;
@@ -104,5 +104,66 @@
     color: var(--primary-white);
     width: 100%;
     height: 100%;
+  }
+  
+  .cart-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.35);
+  }
+  
+  .cart-popup-content {
+    background-color: var(--primary-white);
+    padding: 50px;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--primary-black);
+    max-width: 80%;
+    width: 100%;
+  }
+  
+  .cart-popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .cart-popup-buttons button {
+    padding: 20px;
+    font-weight: bold;
+    border: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 45%;
+  }
+  
+  .cart-popup-buttons button:first-child {
+    background-color: var(--primary-green);
+    color: var(--primary-white);
+  }
+  
+  .cart-popup-buttons button:last-child {
+    background-color: var(--primary-pink);
+    color: var(--primary-white);
+  }
+  
+  @media (max-width: 600px) {
+    .cart-popup-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cart-popup-buttons button {
+      width: 80%;
+      margin: 10px 0;
+    }
   }
   
