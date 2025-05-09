@@ -1,47 +1,49 @@
-import React from 'react';
-import '../styling/ConfirmationPage.css';
-import barcode from '../assets/barcode.png';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useStore from '../store/useStore';
+import barcode from "../assets/barcode.png";
 
-const TicketData = ({ ticket }) => {
+function TicketData() {
+  const navigate = useNavigate();
+  const orderDetails = useStore((state) => state.orderDetails);
+
+  useEffect(() => {
+    if (!orderDetails || !orderDetails.tickets || orderDetails.tickets.length === 0) {
+      navigate('/order');
+    }
+  }, [orderDetails, navigate]);
+
+  if (!orderDetails || !orderDetails.tickets || orderDetails.tickets.length === 0) {
+    return <p>Ingen billetter funnet. Vennligst fullfør bestillingen.</p>;
+  }
+
   return (
-    <div className="ticket-card">
-      <div className="ticket-header">
-        <span className="label">WHAT</span>
-        <h2 className="artist">{ticket.artist}</h2>
-      </div>
+    <div className="confirmation-page">
+      <div className="confirmation-details">
+        <ul className="ticket-list">
+          {orderDetails.tickets.map((ticket) => (
+            <li key={ticket.ticketId} className="ticket-item">
+              <div className="ticket-card">
+                <p><strong>Artist:</strong> {ticket.artist}</p>
+                <p><strong>Sted:</strong> {ticket.venue.name}</p>
+                <p><strong>Dato:</strong> {ticket.date}</p>
+                <p><strong>Tid:</strong> {ticket.timeFrom} - {ticket.timeTo}</p>
+                <p><strong>Seksjon:</strong> {ticket.section}</p>
+                <p><strong>Plass:</strong> {ticket.seat}</p>
+                <p><strong>Billett-ID:</strong> {ticket.ticketId}</p>
+                <p><strong>Pris:</strong> {ticket.price} SEK</p>
 
-      <div className="ticket-section">
-        <span className="label">WHERE</span>
-        <h3>{ticket.venue.name}</h3>
-        <p>{ticket.venue.address}</p>
-      </div>
-
-      <div className="ticket-time-grid">
-        <div>
-          <span className="label">WHEN</span>
-          <p>{ticket.date}</p>
-        </div>
-        <div>
-          <span className="label">FROM</span>
-          <p>{ticket.timeFrom}</p>
-        </div>
-        <div>
-          <span className="label">TO</span>
-          <p>{ticket.timeTo}</p>
-        </div>
-      </div>
-
-      <div className="ticket-info">
-        <span className="label">INFO</span>
-        <p>Section {ticket.section} Seat {ticket.seat}</p>
-      </div>
-
-      <div className="ticket-barcode">
-      <img className="barcode" src={barcode} alt="Barcode" /> 
-        <p>#{ticket.ticketId}</p>
+                <div className="ticket-barcode">
+                  <img src={barcode} alt="Barcode" className="barcode" />
+                  <p>Ordre ID: #{ticket.ticketId}</p>
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
-};
+}
 
 export default TicketData;
