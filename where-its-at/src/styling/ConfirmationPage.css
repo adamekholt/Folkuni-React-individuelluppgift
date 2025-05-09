@@ -1,86 +1,57 @@
 .confirmation-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(#F56B9A, #231F42);
-    min-height: 100vh;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-  
-  .ticket-card {
+  font-family: 'Fira Sans';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(#F56B9A, #231F42);
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 100%;
+}
+
+.ticket-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket-item {
+  width: 95%;
+  max-width: 600px;
+  background-color: var(--primary-white);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.ticket-item p {
+  font-size: 1rem;
+  color: var(--primary-black);
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.ticket-barcode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.barcode {
+  width: 80%;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .ticket-item {
     width: 100%;
-    max-width: 375px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    box-sizing: border-box;
-    position: relative;
+    padding: 1.25rem;
   }
-  
-  .label {
-    text-transform: uppercase;
-    font-size: 0.7rem;
-    color: #999;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
-  .ticket-section h3 {
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 0.2rem;
-  }
-  
-  .ticket-time-grid {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    margin: 1rem 0;
-  }
-  
-  .ticket-time-grid div p {
-    font-weight: bold;
-    font-size: 1rem;
-    margin-top: 0.2rem;
-  }
-  
-  .ticket-info p {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 0.3rem;
-  }
-  
-  .ticket-barcode {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 1.5rem;
-  }
-  
-  .barcode {
-    width: 80%;
-    height: 50px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .ticket-barcode p {
-    font-size: 0.8rem;
-    color: #555;
-    letter-spacing: 2px;
-  }
-  
-  @media screen and (max-width: 500px) {
-    .ticket-card {
-      margin: 1rem auto;
-      padding: 1.25rem;
-    }
-  
-    .confirmation-wrapper h1 {
-      font-size: 1.5rem;
-    }
-  }
-  
+}
