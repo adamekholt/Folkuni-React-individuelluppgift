@@ -15,40 +15,42 @@ function Cart({ children }) {
   const navigate = useNavigate();
 
   const addToCart = (event, quantity) => {
-    setCartItems((prev) => {
-      const existing = prev.find((item) => item.event.id === event.id);
-      if (existing) {
-        return prev.map((item) =>
+    setCartItems((items) => {
+      const existingItem = items.find(item => item.event.id === event.id);
+
+      if (existingItem) {
+        return items.map(item =>
           item.event.id === event.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       }
-      return [...prev, { event, quantity }];
+
+      return [...items, { event, quantity }];
     });
   };
 
-  const removeFromCart = (id) => {
-    setCartItems((prev) => prev.filter((item) => item.event.id !== id));
+  const removeFromCart = (eventId) => {
+    setCartItems((items) => items.filter(item => item.event.id !== eventId));
   };
 
   const updateQuantity = (eventId, newQuantity) => {
-    setCartItems((prev) =>
-      prev.map((item) =>
+    setCartItems((items) =>
+      items.map(item =>
         item.event.id === eventId ? { ...item, quantity: newQuantity } : item
       )
     );
   };
 
-  const navigateToOrderSummary = () => {
+  const goToOrderSummary = () => {
     navigate("/order");
   };
 
   return (
     <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity }}>
       {cartItems.length > 0 && (
-        <div className="cart-icon-container" onClick={navigateToOrderSummary}>
-          <FontAwesomeIcon icon={faCartShopping} size="xl" />
+        <div className="navigation-icon cart-item-count" onClick={goToOrderSummary}>
+          <FontAwesomeIcon icon={faCartShopping} />
         </div>
       )}
       {children}
