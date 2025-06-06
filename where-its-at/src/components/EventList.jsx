@@ -4,25 +4,29 @@ import { fetchEvents } from '../api';
 import '../styling/EventPage.css';
 import '../styling/basestyling.css';
 
-function EventList() {
+function EventList({ events: externalEvents }) {
   const [events, setEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!externalEvents);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchEvents()
-      .then(data => setEvents(data.slice(0, 5)))
-      .catch(() => setError('Failed to load events.'))
-      .finally(() => setLoading(false));
-  }, []);
+    if (!externalEvents) {
+      fetchEvents()
+        .then(data => setEvents(data.slice(0, 5)))
+        .catch(() => setError('Failed to load events.'))
+        .finally(() => setLoading(false));
+    }
+  }, [externalEvents]);
+
+  const displayEvents = externalEvents || events;
 
   if (loading) return <p>Loading events...</p>;
   if (error) return <p>{error}</p>;
-  if (events.length === 0) return <p>No events available.</p>;
+  if (displayEvents.length === 0) return <p>Ingen event matcher søket.</p>;
 
   return (
     <div className="event-list">
-      {events.map(event => (
+      {displayEvents.map(event => (
         <Link to={`/event/${event.id}`} key={event.id} className="event-link">
           <div className="event-card">
             <div className="event-date">
