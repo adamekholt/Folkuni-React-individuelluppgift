@@ -1,6 +1,6 @@
 import React from 'react';
-import { useCart } from '../components/Cart';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../components/Cart';
 import OrderItem from '../components/OrderItem';
 import useStore from '../store/useStore'; 
 import '../styling/OrderSummaryPage.css';
@@ -50,6 +50,9 @@ function OrderSummaryPage() {
 
   return (
     <div className="order-summary-wrapper">
+      <button className="navigation-icon back-button" onClick={() => navigate(-1)}>
+        <i className="fa-solid fa-arrow-left"></i>
+      </button>
       <h1>Orderöversikt</h1>
       {cartItems.length === 0 ? (
         <p>Din varukorg är tom.</p>

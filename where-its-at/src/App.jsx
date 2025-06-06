@@ -1,5 +1,6 @@
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Cart from './components/Cart'; // Importere Cart-komponenten
+import Cart from './components/Cart';
 import LandingPage from './pages/LandingPage';
 import EventPage from './pages/EventPage';
 import SingleEventPage from './pages/SingleEventPage';
@@ -7,12 +8,13 @@ import OrderSummaryPage from './pages/OrderSummaryPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 
 function App() {
+  const [visitedPages, setVisitedPages] = useState([]);
   return (
     <Cart>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/events" element={<EventPage />} />
-        <Route path="/event/:id" element={<SingleEventPage />} />
+        <Route path="/" element={<LandingPage visitedPages={visitedPages} setVisitedPages={setVisitedPages} />}  />
+        <Route path="/events" element={<EventPage visitedPages={visitedPages} setVisitedPages={setVisitedPages} />} />
+        <Route path="/event/:id" element={<SingleEventPage visitedPages={visitedPages} setVisitedPages={setVisitedPages} />} />
         <Route path="/order" element={<OrderSummaryPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
       </Routes>
