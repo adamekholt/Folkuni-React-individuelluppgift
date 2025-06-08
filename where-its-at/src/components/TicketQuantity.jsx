@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import QuantityAddition from './QuantityAddition';
 import '../styling/SingleEventPage.css';
 
-function TicketQuantity({ price = 0 }) {
-    const [quantity, setQuantity] = useState(1);
-
-    console.log("setQuantity:", setQuantity);
-
+function TicketQuantity({ quantity, setQuantity, price = 0 }) {
     const totalPrice = quantity * price;
 
     return (
