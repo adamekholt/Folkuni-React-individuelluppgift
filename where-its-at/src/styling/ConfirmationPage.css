@@ -3,15 +3,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(#F56B9A, #231F42);
   min-height: 100vh;
-  padding: 2rem;
+  padding: 5rem;
   max-width: 100%;
 }
 
 .ticket-list {
   list-style-type: none;
-  padding: 0;
+  padding-top: 2rem;
   margin: 0;
   width: 100%;
   display: flex;
@@ -20,7 +19,7 @@
 }
 
 .ticket-item {
-  width: 95%;
+  width: 70vw;
   max-width: 600px;
   background-color: var(--primary-white);
   border-radius: 10px;
@@ -44,14 +43,14 @@
 }
 
 .barcode {
-  width: 80%;
+  width: 60%;
   height: 50px;
   margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 500px) {
   .ticket-item {
-    width: 100%;
+    width: 90vw;
     padding: 1.25rem;
   }
 }
