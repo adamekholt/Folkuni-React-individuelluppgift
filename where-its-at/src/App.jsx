@@ -4,7 +4,7 @@ import Cart from './components/Cart';
 import LandingPage from './pages/LandingPage';
 import EventPage from './pages/EventPage';
 import SingleEventPage from './pages/SingleEventPage';
-import OrderSummaryPage from './pages/OrderSummaryPage';
+import CartPage from './pages/CartPage';
 import ConfirmationPage from './pages/ConfirmationPage';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<LandingPage visitedPages={visitedPages} setVisitedPages={setVisitedPages} />}  />
         <Route path="/events" element={<EventPage visitedPages={visitedPages} setVisitedPages={setVisitedPages} />} />
         <Route path="/event/:id" element={<SingleEventPage visitedPages={visitedPages} setVisitedPages={setVisitedPages} />} />
-        <Route path="/order" element={<OrderSummaryPage />} />
+        <Route path="/order" element={<CartPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
       </Routes>
     </>
