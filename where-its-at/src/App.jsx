@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Cart from './components/Cart';
 import LandingPage from './pages/LandingPage';
 import EventPage from './pages/EventPage';
@@ -9,8 +9,13 @@ import ConfirmationPage from './pages/ConfirmationPage';
 
 function App() {
   const [visitedPages, setVisitedPages] = useState([]);
+  const location = useLocation();
+
+  const showCart = location.pathname !== '/confirmation';
+
   return (
-    <Cart>
+    <>
+      {showCart && <Cart />}
       <Routes>
         <Route path="/" element={<LandingPage visitedPages={visitedPages} setVisitedPages={setVisitedPages} />}  />
         <Route path="/events" element={<EventPage visitedPages={visitedPages} setVisitedPages={setVisitedPages} />} />
@@ -18,7 +23,7 @@ function App() {
         <Route path="/order" element={<OrderSummaryPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
       </Routes>
-    </Cart>
+    </>
   );
 }
 
