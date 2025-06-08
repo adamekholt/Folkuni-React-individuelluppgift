@@ -35,7 +35,7 @@ function TicketData() {
 
                 <div className="ticket-barcode">
                   <img src={barcode} alt="Barcode" className="barcode" />
-                  <p>Ordre ID: #{ticket.ticketId}</p>
+                  <p>Order ID: #{orderDetails.orderId}</p>
                 </div>
               </div>
             </li>
