@@ -39,7 +39,7 @@ function EventList({ events: externalEvents }) {
               <p className="time">{event.when.from} - {event.when.to}</p>
             </div>
             <div className="event-price">
-              <p>{event.price} sek</p>
+              <p>{event.price} SEK</p>
             </div>
           </div>
         </Link>

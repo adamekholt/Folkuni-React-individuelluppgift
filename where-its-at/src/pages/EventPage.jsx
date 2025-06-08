@@ -41,15 +41,12 @@ export default function EventPage({ visitedPages, setVisitedPages }) {
           onChange={(e) => setUserInput(e.target.value)}
         />
       </div>
-
       <SearchLogic
         allEvents={allEvents}
         userInput={userInput}
         setSearchResult={setFilteredEvents}
       />
-
       <EventList events={filteredEvents} />
-
       <NavigationDots
         routes={['/', '/events']}
         pageNames={['landing', 'events']}
