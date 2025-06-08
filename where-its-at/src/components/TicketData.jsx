@@ -6,12 +6,15 @@ import barcode from "../assets/barcode.png";
 function TicketData() {
   const navigate = useNavigate();
   const orderDetails = useStore((state) => state.orderDetails);
+  const clearCart = useStore((state) => state.clearCart);
 
   useEffect(() => {
     if (!orderDetails || !orderDetails.tickets || orderDetails.tickets.length === 0) {
       navigate('/order');
+    } else {
+      clearCart();
     }
-  }, [orderDetails, navigate]);
+  }, [orderDetails, navigate, clearCart]);
 
   if (!orderDetails || !orderDetails.tickets || orderDetails.tickets.length === 0) {
     return <p>Ingen billetter funnet. Vennligst fullfør bestillingen.</p>;
