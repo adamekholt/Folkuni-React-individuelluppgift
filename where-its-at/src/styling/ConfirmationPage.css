@@ -2,10 +2,15 @@
   font-family: 'Fira Sans';
   display: flex;
   flex-direction: column;
+  background: linear-gradient(#F56B9A, #231F42);
   align-items: center;
   min-height: 100vh;
   padding: 5rem;
   max-width: 100%;
+}
+
+.confirmation-h1 {
+  color: var(--primary-white);
 }
 
 .ticket-list {

@@ -12,7 +12,7 @@ const ConfirmationPage = () => {
 
   return (
     <div className="confirmation-wrapper">
-      <h1>Where it’s @? Right here, with your tickets!</h1>
+      <h1 className='confirmation-h1'>Where it’s @? Right here, with your tickets!</h1>
       <TicketData />
       {isConfettiActive && <Confetti width={width} height={height} />}
     </div>
