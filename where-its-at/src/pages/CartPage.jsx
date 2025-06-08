@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import OrderItem from '../components/OrderItem';
 import useStore from '../store/useStore'; 
-import '../styling/OrderSummaryPage.css';
+import '../styling/CartPage.css';
 import '../styling/basestyling.css';
 
-function OrderSummaryPage() {
+function CartPage() {
   const cartItems = useStore(state => state.cartItems);
   const removeFromCart = useStore(state => state.removeFromCart);
   const updateQuantity = useStore(state => state.updateQuantity);
@@ -52,11 +54,11 @@ function OrderSummaryPage() {
   return (
     <div className="order-summary-wrapper">
       <button className="navigation-icon back-button" onClick={() => navigate(-1)}>
-        <i className="fa-solid fa-arrow-left"></i>
+        <FontAwesomeIcon icon={faArrowLeft} />
       </button>
       <h1>Orderöversikt</h1>
       {cartItems.length === 0 ? (
-        <p>Din varukorg är tom.</p>
+        <p>Cart is empty.</p>
       ) : (
         <>
           <ul className="order-summary-list">
@@ -82,4 +84,4 @@ function OrderSummaryPage() {
   );
 }
 
-export default OrderSummaryPage;
+export default CartPage;
