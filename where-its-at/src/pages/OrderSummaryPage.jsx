@@ -1,15 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCart } from '../components/Cart';
 import OrderItem from '../components/OrderItem';
 import useStore from '../store/useStore'; 
 import '../styling/OrderSummaryPage.css';
 import '../styling/basestyling.css';
 
 function OrderSummaryPage() {
-  const { cartItems, removeFromCart, updateQuantity } = useCart();
+  const cartItems = useStore(state => state.cartItems);
+  const removeFromCart = useStore(state => state.removeFromCart);
+  const updateQuantity = useStore(state => state.updateQuantity);
+  const setOrderDetails = useStore(state => state.setOrderDetails);
   const navigate = useNavigate();
-  const setOrderDetails = useStore((state) => state.setOrderDetails);
 
   const total = cartItems.reduce(
     (sum, item) => sum + item.event.price * item.quantity,

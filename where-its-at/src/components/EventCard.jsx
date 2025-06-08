@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import QuantitySelector from './TicketQuantity';
 import '../styling/SingleEventPage.css';
-import { useCart } from './Cart';
+import useStore from '../store/useStore';
 import { useNavigate } from 'react-router-dom';
 
 function EventCard({ event }) {
@@ -9,7 +9,7 @@ function EventCard({ event }) {
 
   const [quantity, setQuantity] = useState(1);
   const [showPopup, setShowPopup] = useState(false);
-  const { addToCart } = useCart();
+  const addToCart = useStore(state => state.addToCart);
   const navigate = useNavigate();
 
   const addEventToCart = () => {
