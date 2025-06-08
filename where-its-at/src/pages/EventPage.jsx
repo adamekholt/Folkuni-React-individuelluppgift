@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import NavigationDots from '../components/NavigationDots';
 import SearchLogic from '../components/SearchLogic';
 import EventList from '../components/EventList';
 import { fetchEvents } from '../api';
 import '../styling/EventPage.css';
 import '../styling/basestyling.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export default function EventPage({ visitedPages, setVisitedPages }) {
   const [userInput, setUserInput] = useState('');
