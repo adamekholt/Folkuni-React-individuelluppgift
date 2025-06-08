@@ -1,59 +1,55 @@
 .order-summary-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 2rem;
     max-width: 900px;
-    gap: 10px;
-    text-align: flex-start;
+    margin: 0 auto;
+    gap: 1rem;
 }
 
 h1 {
-    text-align: center;
+text-align: center;
 }
 
 .order-item-details {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    font-weight: 400;
-    width: 100%;
-    border: 1px solid var(--primary-pink);
-    box-sizing: border-box;
-    position: relative;
+display: flex;
+flex-direction: column;
+padding: 1rem;
+font-weight: 400;
+width: 100%;
+border: 1px solid var(--primary-pink);
+position: relative;
 }
 
 .event-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+width: 100%;
+flex-wrap: wrap;
 }
 
 .event-datetime {
-    margin-top: 5px;
-    font-size: 14px;
-    color: var(--secondary-color);
+margin-top: 5px;
+font-size: 14px;
+color: var(--secondary-color);
 }
 
 .order-item-actions {
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
-    width: 100%;
-    margin: 0;
-}
-
-.quantity-addition {
-    width: 100%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+width: 100%;
+margin-top: 1rem;
 }
 
 .remove-btn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 22px;
-    color: var(--primary-green);
-    position: absolute;
-    right: 10px; 
-    top: 10px; 
+background: none;
+border: none;
+color: var(--primary-green);
+font-size: 1.5rem;
+position: absolute;
+top: 1rem;
+right: 1rem;
+cursor: pointer;
 }

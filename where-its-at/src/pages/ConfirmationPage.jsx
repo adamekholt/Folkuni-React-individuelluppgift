@@ -6,7 +6,8 @@ import '../styling/basestyling.css';
 const ConfirmationPage = () => {
   return (
     <div className="confirmation-wrapper">
-      <TicketData />
+      <h1>Where it’s @? Right here, with your tickets!</h1>
+      <TicketData />     
     </div>
   );
 };
