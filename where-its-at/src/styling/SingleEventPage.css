@@ -1,17 +1,13 @@
 .single-event-wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;    
+  align-items: center;
   padding: 2rem;
-  max-width: 900px;     
+  max-width: 900px;
   margin: 0 auto;
   gap: 1rem;
   text-align: center;
   box-sizing: border-box;
-}
-
-.single-event-wrapper h3 {
-  padding: 0.5rem 0;
 }
 
 .event-info-detail {
@@ -24,7 +20,7 @@
 
 .event-datetime-detail {
   font-weight: bold;
-  color: var(--primary-green);
+  color: var(--primary-white);
 }
 
 .single-event-title {
@@ -32,13 +28,12 @@
   font-size: 2.25rem;
   color: var(--primary-pink);
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .event-add-to-cart-btn {
   margin-top: 2rem;
   width: 100%;
-  color: var(--primary-white);
+  color: var(--primary-clack);
   background-color: var(--primary-green);
   font-weight: bold;
   font-size: 1.25rem;
@@ -46,7 +41,6 @@
   border-radius: 5px;
   padding: 1rem;
   transition: all 0.3s ease;
-  text-shadow: 1px 1px rgba(0, 0, 0, 1);
 }
 
 .quantity-box {
@@ -66,7 +60,6 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--primary-pink);
-  text-shadow: 1px 1px 0 var(--primary-pink);
   font-weight: 400;
 }
 
@@ -80,8 +73,9 @@
   border: 1px solid var(--primary-pink);
   background-color: inherit;
   color: var(--primary-white);
-  font-size: 1rem;
+  font-size: 2rem;
   cursor: pointer;
+  padding: 2%;
 }
 
 .quantity-number {
@@ -91,7 +85,7 @@
   border-top: 1px solid var(--primary-pink);
   border-bottom: 1px solid var(--primary-pink);
   color: var(--primary-white);
-  font-size: 1rem;
+  font-size: rem;
 }
 
 .cart-popup {
@@ -145,7 +139,7 @@
   color: var(--primary-white);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .cart-popup-buttons {
     flex-direction: column;
     align-items: center;
@@ -155,4 +149,4 @@
     width: 80%;
     max-width: 100%;
   }
-}   
+}

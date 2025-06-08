@@ -13,15 +13,16 @@ export default function LandingPage({ visitedPages, setVisitedPages }) {
 
   return (
     <div className="landingpage-wrapper">
-      <img className="logo" src={logo} alt="Logotype" /> 
+      <img className="logo" src={logo} alt="Logotype" />
       <h1>Where It's @</h1>
-      <h3>Ticketing made easy</h3>
+      <h2>Ticketing made easy</h2>
       <NavigationDots
         routes={['/', '/events']}
-        pageNames={['landing', 'events',]}
+        pageNames={['landing', 'events']}
         visitedPages={visitedPages}
         activeIndex={0}
       />
     </div>
   );
 }
+

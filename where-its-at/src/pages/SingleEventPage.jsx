@@ -20,8 +20,8 @@ function SingleEventPage({ visitedPages, setVisitedPages }) {
 
   useEffect(() => {
     fetchEvents()
-      .then((events) => {
-        const foundEvent = events.find((ev) => ev.id === id);
+      .then(events => {
+        const foundEvent = events.find(ev => ev.id === id);
         setEvent(foundEvent);
       })
       .catch(() => setError('Could not load.'))
@@ -35,7 +35,6 @@ function SingleEventPage({ visitedPages, setVisitedPages }) {
   return (
     <div className="single-event-wrapper">
       <h1>Event</h1>
-      <h3>You are about to score some tickets to</h3>
       <EventCard event={event} />
       <NavigationDots
         routes={['/', '/events', `/event/${event.id}`]}

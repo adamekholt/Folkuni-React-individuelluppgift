@@ -25,7 +25,7 @@ function TicketData() {
             <li key={ticket.ticketId} className="ticket-item">
               <div className="ticket-card">
                 <p><strong>Artist:</strong> {ticket.artist}</p>
-                <p><strong>Sted:</strong> {ticket.venue.name}</p>
+                <p><strong>Sted:</strong> {ticket.venue}</p>
                 <p><strong>Dato:</strong> {ticket.date}</p>
                 <p><strong>Tid:</strong> {ticket.timeFrom} - {ticket.timeTo}</p>
                 <p><strong>Seksjon:</strong> {ticket.section}</p>

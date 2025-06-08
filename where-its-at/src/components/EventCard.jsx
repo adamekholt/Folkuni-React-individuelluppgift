@@ -34,17 +34,15 @@ function EventCard({ event }) {
         <QuantitySelector quantity={quantity} setQuantity={setQuantity} price={event.price} />
       </div>
 
-      <button onClick={addEventToCart} className="event-add-to-cart-btn">
-        Lägg till i varukorg
-      </button>
+      <button onClick={addEventToCart} className="event-add-to-cart-btn">Add to cart</button>
 
       {showPopup && (
         <div className="cart-popup">
           <div className="cart-popup-content">
-            <p>{event.name} har lagts till i varukorgen.</p>
+            <p>{event.name} is added to your cart.</p>
             <div className="cart-popup-buttons">
-              <button onClick={continueShopping}>Fortsätt handla</button>
-              <button onClick={goToCart}>Gå till varukorg</button>
+              <button onClick={continueShopping}>Continue shopping</button>
+              <button onClick={goToCart}>Go to cart</button>
             </div>
           </div>
         </div>

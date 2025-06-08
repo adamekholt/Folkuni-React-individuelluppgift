@@ -2,7 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   min-height: 100vh;
+  width: 100%;
   padding: 2rem;
   gap: 1rem;
 }
@@ -20,6 +22,7 @@
   color: var(--primary-white);
   border: none;
   border-radius: 2px;
+  font-size: 1rem;
 }
 
 .search-icon {
@@ -35,7 +38,7 @@
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .event-card {
@@ -45,34 +48,33 @@
   padding: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   color: var(--primary-white);
+  gap: 2rem;
 }
 
 .event-date {
   display: flex;
+  font-size: 1rem;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
+  padding: 10px;
   border: 1px solid var(--primary-white);
   border-radius: 5px;
   font-weight: bold;
-  color: #ffffffcc;
   width: 5rem;
   margin-right: 1rem;
+}
+
+.eventspage-wrapper p {
+  font-size: 1rem;
 }
 
 .event-info {
   flex: 1;
 }
 
-.event-list-info {
-  margin: 0;
-  text-shadow: 1px 1px 0 var(--primary-pink);
-}
-
 .event-info .venue,
 .event-info .time {
-  font-size: 0.8rem;
-  color: #bbb;
+  font-size: 1rem;
 }
 
 .event-price {
@@ -83,4 +85,52 @@
 .event-link {
   text-decoration: none;
   color: inherit;
+}
+
+@media (max-width: 500px) {
+  .search-input {
+    font-size: 1.125rem;
+  }
+
+  .event-card {
+    font-size: 1.125rem;
+  }
+
+  .event-date,
+  .event-date p {
+    font-size: 1.125rem;
+  }
+
+  .event-info .venue,
+  .event-info .time {
+    font-size: 1rem;
+  }
+
+  .event-price {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .search-input {
+    font-size: 1rem;
+  }
+
+  .event-card {
+    font-size: 1rem;
+  }
+
+  .event-date,
+  .event-date p {
+    font-size: 1rem;
+  }
+
+  .event-info .venue,
+  .event-info .time {
+    font-size: 0.875rem;
+  }
+
+  .event-price {
+    font-size: 1rem;
+  }
 }

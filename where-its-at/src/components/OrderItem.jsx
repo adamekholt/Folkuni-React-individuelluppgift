@@ -13,7 +13,7 @@ function OrderItem({ event, quantity, onQuantityChange, onRemove }) {
       <div className="order-item-details">
         <div className="event-header">
           <h3>{event.name}</h3>
-          <button onClick={onRemove} className="remove-btn">
+          <button onClick={onRemove} className="remove-btn" aria-label="Delete ticket">
             <FontAwesomeIcon icon={faTrash} />
           </button>
         </div>
