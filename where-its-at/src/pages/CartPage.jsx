@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { v4 as uuidv4 } from 'uuid';
 import OrderItem from '../components/OrderItem';
 import useStore from '../store/useStore'; 
 import '../styling/CartPage.css';
@@ -25,6 +26,7 @@ function CartPage() {
   };
 
   const handleConfirm = () => {
+    const orderId = uuidv4();
     let currentSeat = 101;
     const section = String.fromCharCode(65 + Math.floor(Math.random() * 3));
 
@@ -46,10 +48,11 @@ function CartPage() {
         return ticket;
       });
     });
-
-    setOrderDetails({ tickets });
+  
+    setOrderDetails({ orderId, tickets }); 
     navigate('/confirmation');
   };
+  
 
   return (
     <div className="order-summary-wrapper">
